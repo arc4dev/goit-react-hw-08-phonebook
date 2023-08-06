@@ -1,3 +1,4 @@
+import { Box, Button, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { loginUser } from 'redux/auth/operations';
 
@@ -18,15 +19,25 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          px: 12,
+          gap: 2,
+        }}
+      >
+        <TextField label="Email" variant="outlined" type="email" name="email" />
+        <TextField
+          label="Password"
+          variant="outlined"
+          type="password"
+          name="password"
+        />
+        <Button type="submit" variant="contained">
+          Log in
+        </Button>
+      </Box>
     </form>
   );
 };

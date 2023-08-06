@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import { Helmet } from 'react-helmet';
 
 export const Home = () => {
@@ -6,7 +7,12 @@ export const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      Home Page
+      <Typography
+        variant="h4"
+        sx={{ display: 'flex', justifyContent: 'center' }}
+      >
+        Home Page
+      </Typography>
     </div>
   );
 };

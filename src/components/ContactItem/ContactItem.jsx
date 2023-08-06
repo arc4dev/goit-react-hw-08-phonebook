@@ -1,5 +1,6 @@
+import { Avatar, Button, ListItem, ListItemText } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import css from './ContactItem.module.css';
+
 import { deleteContact } from 'redux/operations';
 
 export const ContactItem = ({ contact }) => {
@@ -8,14 +9,11 @@ export const ContactItem = ({ contact }) => {
   const handleDelete = e => dispatch(deleteContact(contact.id));
 
   return (
-    <li className={css.contact_item}>
-      <p>
-        {contact.name} {contact.number}
-      </p>
-      <button onClick={handleDelete} type="button">
-        Delete
-      </button>
-    </li>
+    <ListItem>
+      <Avatar sx={{ mr: 2 }} />
+      <ListItemText primary={contact.name} secondary={contact.number} />
+      <Button onClick={handleDelete}>Delete</Button>
+    </ListItem>
   );
 };
 

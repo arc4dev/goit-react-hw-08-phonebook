@@ -1,3 +1,4 @@
+import { Box, Button } from '@mui/material';
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from 'redux/auth/operations';
@@ -12,11 +13,11 @@ export const UserMenu = () => {
   };
 
   return (
-    <>
+    <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
       <p>Welcome, {user?.email || 'user@example.pl'}</p>
-      <button type="button" onClick={handleLogout}>
+      <Button variant="contained" onClick={handleLogout}>
         Log out
-      </button>
-    </>
+      </Button>
+    </Box>
   );
 };

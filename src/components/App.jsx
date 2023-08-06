@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
+import { Container } from '@mui/material';
 
 //App
 function App() {
@@ -26,7 +27,7 @@ function App() {
   return isRefreshing ? (
     <div>Loading...</div>
   ) : (
-    <div>
+    <Container maxWidth="sm" sx={{ px: 4 }}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -54,7 +55,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </div>
+    </Container>
   );
 }
 

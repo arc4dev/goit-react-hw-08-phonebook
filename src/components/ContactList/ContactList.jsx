@@ -7,6 +7,7 @@ import {
 } from 'redux/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
+import { List } from '@mui/material';
 
 export const ContactList = ({ handleClick }) => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export const ContactList = ({ handleClick }) => {
   const visibleContacts = useSelector(selectVisibleContacts);
 
   return (
-    <ul>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       {error && <p>{error}</p>}
 
       {isLoading ? (
@@ -37,6 +38,6 @@ export const ContactList = ({ handleClick }) => {
       ) : (
         <p>You don't have any contacts!</p>
       )}
-    </ul>
+    </List>
   );
 };
