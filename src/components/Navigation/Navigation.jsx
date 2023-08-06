@@ -1,7 +1,17 @@
+import styled from '@emotion/styled';
 import { AppBar, Box, Container, Toolbar, Typography } from '@mui/material';
+import { useAuth } from 'hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 
+const styledNavLink = styled(NavLink)({
+  '&.active': {
+    textDecoration: 'underline',
+  },
+});
+
 export const Navigation = ({ children }) => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <AppBar position="static">
       <Container>
@@ -13,7 +23,7 @@ export const Navigation = ({ children }) => {
           <Box>
             <Typography
               noWrap
-              component={NavLink}
+              component={styledNavLink}
               to="/"
               exact
               sx={{
@@ -27,20 +37,22 @@ export const Navigation = ({ children }) => {
               Home
             </Typography>
 
-            <Typography
-              noWrap
-              component={NavLink}
-              to="/contacts"
-              sx={{
-                mr: 2,
-                fontWeight: 700,
-                letterSpacing: '.1rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
-              Contacts
-            </Typography>
+            {isLoggedIn && (
+              <Typography
+                noWrap
+                component={styledNavLink}
+                to="/contacts"
+                sx={{
+                  mr: 2,
+                  fontWeight: 700,
+                  letterSpacing: '.1rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                }}
+              >
+                Contacts
+              </Typography>
+            )}
           </Box>
           {children}
         </Toolbar>

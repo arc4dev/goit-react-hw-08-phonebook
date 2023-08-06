@@ -1,12 +1,19 @@
+import styled from '@emotion/styled';
 import { Box, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+
+const styledNavLink = styled(NavLink)({
+  '&.active': {
+    textDecoration: 'underline',
+  },
+});
 
 export const AuthNav = () => {
   return (
     <Box>
       <Typography
         noWrap
-        component={NavLink}
+        component={styledNavLink}
         to="/register"
         exact
         sx={{
@@ -21,7 +28,7 @@ export const AuthNav = () => {
       </Typography>
       <Typography
         noWrap
-        component={NavLink}
+        component={styledNavLink}
         to="/login"
         exact
         sx={{
