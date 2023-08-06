@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { Container, Paper } from '@mui/material';
+import { Loader } from './Loader/Loader';
 
 //App
 function App() {
@@ -25,7 +26,17 @@ function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <div>Loading...</div>
+    <Container
+      maxWidth="sm"
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        mt: 8,
+      }}
+    >
+      <Loader />
+    </Container>
   ) : (
     <Container maxWidth="sm" sx={{ px: 4, py: 4, maxHeight: '100vh' }}>
       <Paper>
