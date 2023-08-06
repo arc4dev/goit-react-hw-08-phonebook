@@ -1,4 +1,4 @@
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { Box, Button, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/operations';
 
