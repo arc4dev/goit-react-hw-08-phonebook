@@ -25,7 +25,6 @@ export const Navigation = ({ children }) => {
               noWrap
               component={styledNavLink}
               to="/"
-              exact
               sx={{
                 mr: 2,
                 fontWeight: 700,

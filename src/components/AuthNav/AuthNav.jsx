@@ -15,7 +15,6 @@ export const AuthNav = () => {
         noWrap
         component={styledNavLink}
         to="/register"
-        exact
         sx={{
           mr: 2,
           fontWeight: 700,
@@ -30,7 +29,6 @@ export const AuthNav = () => {
         noWrap
         component={styledNavLink}
         to="/login"
-        exact
         sx={{
           mr: 2,
           fontWeight: 700,
