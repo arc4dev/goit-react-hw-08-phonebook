@@ -11,7 +11,7 @@ export const Home = () => {
         variant="h4"
         sx={{ display: 'flex', justifyContent: 'center' }}
       >
-        Home Page
+        Home page
       </Typography>
     </div>
   );

@@ -15,7 +15,16 @@ export const UserMenu = () => {
   return (
     <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
       <p>Welcome, {user?.email || 'user@example.pl'}</p>
-      <Button variant="contained" onClick={handleLogout}>
+      <Button
+        sx={{
+          bgcolor: 'red',
+          '&:hover': {
+            bgcolor: 'red',
+          },
+        }}
+        variant="contained"
+        onClick={handleLogout}
+      >
         Log out
       </Button>
     </Box>
